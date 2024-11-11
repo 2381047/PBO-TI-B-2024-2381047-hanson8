@@ -25,13 +25,13 @@ public class Database {
     }
 
     public void setup(){
-        String mySqlConnUrlTemplate = "jdbc:mysql,://%s:%s/%s";
+        String mySqlConnUrlTemplate = "jdbc:mysql://%s:%s/%s";
 
         //error Handling
         try{
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(String.format(mySqlConnUrlTemplate, host, port, dbName), userName, password);
-            System.out.println("Database Conneacted !");
+            System.out.println("Database Connected !");
         } catch (SQLException | ClassNotFoundException e){
             throw new RuntimeException(e);
         }
